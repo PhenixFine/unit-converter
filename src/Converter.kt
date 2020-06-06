@@ -41,9 +41,7 @@ object Converter {
         println("Conversion from ${unit1.strings[2]} to ${unit2.strings[2]} is impossible")
     }
 
-    private fun parseError() {
-        println("Parse error")
-    }
+    private fun parseError() = println("Parse error")
 
     private fun negativeError(num: Int) {
         val word = if (num == 0) "Length" else "Weight"
