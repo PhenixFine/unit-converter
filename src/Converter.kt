@@ -1,3 +1,5 @@
+import java.util.*
+
 object Converter {
     private enum class Units(val valueM: Double, val strings: Array<String>, val unit: Int) {
         // measurements: unit = 0
@@ -98,5 +100,20 @@ object Converter {
         strMeasure1 = if (amount == 1.0) measure1.strings[1] else measure1.strings[2]
         strMeasure2 = if (converted == 1.0) measure2.strings[1] else measure2.strings[2]
         println("$amount $strMeasure1 is $converted $strMeasure2")
+    }
+}
+
+fun getString(): String {
+    val scanner = Scanner(System.`in`)
+    return (scanner.nextLine().toLowerCase())
+}
+
+fun main() {
+    var strings: String = ""
+
+    while (strings != "exit") {
+        print("Enter what you want to convert (or exit): ")
+        strings = getString()
+        if (strings != "exit") Converter.convert(strings)
     }
 }
